@@ -1,8 +1,6 @@
 import './App.css';
-import Examples from './components/Examples';
-import Button, { ButtonChild } from './components/Button/Button';
-import { Flexwrapper } from './components/FlexWrapper/FlexWrapper';
-
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { NavBar } from './components/NavBar/NavBar';
 
 // Los componentes siempre se escriben la primera letra en mayusculas
 // En React se usa mucho camelCase
@@ -11,15 +9,15 @@ import { Flexwrapper } from './components/FlexWrapper/FlexWrapper';
 function App() {
   return (
     <>
-      <Examples/>
-      <Flexwrapper>
-        <Button text="Botón A" color="blue"/>
-        <Button text="Botón B" color="indigo"/>
-        <Button text="Ultimo" color="yellow"/>
-        <ButtonChild color="red">
-          <h1>Botón hijo</h1>
-        </ButtonChild>
-      </Flexwrapper>
+      <NavBar
+      logo="/assets/img/stickerStunning.webp"
+      />
+
+      <ItemListContainer
+      greeting="Hola, bienvenido a Stunning"
+      />
+
+
     </>
   );
 }
