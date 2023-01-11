@@ -1,15 +1,12 @@
-import './App.css';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
-import { NavBar } from './components/NavBar/NavBar';
-
-// Los componentes siempre se escriben la primera letra en mayusculas
-// En React se usa mucho camelCase
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { NavBarBT } from './components/NavBarBT/NavBarBT';
 
 
 function App() {
   return (
     <>
-      <NavBar
+      <NavBarBT
       logo="/assets/img/stickerStunning.webp"
       />
 
