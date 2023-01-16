@@ -1,8 +1,10 @@
 import Card from 'react-bootstrap/Card';
+import DetailBT from '../DetailBT/DetailBT';
 import ItemCount from '../ItemCount/ItemCount';
 
 function CardBT(props) {
-    const{productImg,cardTitle,price,description}=props ;
+    const{productImg,cardTitle,price,id}=props ;
+
     return (
         <Card style={{ width: '18rem' }} 
         bg={'light'}
@@ -11,11 +13,11 @@ function CardBT(props) {
         <Card.Header>{cardTitle}</Card.Header>
         <Card.Body>
             <Card.Title>{`${price}`}</Card.Title>
-            <Card.Text>
-                {`${description}`}
-            </Card.Text>
         </Card.Body>
         <ItemCount/>
+        <DetailBT
+        id={id}
+        />
         </Card>
     );
 }

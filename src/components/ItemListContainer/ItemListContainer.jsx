@@ -1,53 +1,47 @@
+import React,{useState,useEffect} from 'react';
 import CardBT from '../CardBT/CardBT';
 import {Flexwrapper} from '../FlexWrapper/FlexWrapper';
-import {Item }from "../Item/Item";
-import "./ItemListContainer.css";
+import {getItems, getItemsByCategoryid} from '../../services/mockAsyncServices';
+import Row from 'react-bootstrap/Row';
+import { useParams } from 'react-router-dom';
 
+export function ItemListContainer() {
+    const [products, setProducts]= useState([]);
 
+    const {categoryid} = useParams();
+    console.log(categoryid);
 
+    useEffect(() => {
+        if(categoryid){
+            getItemsByCategoryid(categoryid).then((data)=>{
+                //console.log(data)
+                setProducts(data);
+            });
+        }else{
+            getItems().then((data)=>{
+                setProducts(data);
+            });
+        }
+    },[categoryid]);
 
-export function ItemListContainer(props) {
-    const {greeting} = props;
     return (
-        <div className="item-list-container">
-            <h1>{greeting}</h1>
             <Flexwrapper>
-            <CardBT
-                productImg='../../assets/img/stickerStunning.webp'
-                cardTitle='Pantalon1'
-                price='5000'
-                description='Lorem Ipsum'
-                textButton='Compra'
-                ></CardBT>
-                                <CardBT
-                productImg='../../assets/img/stickerStunning.webp'
-                cardTitle='Pantalon1'
-                price='5000'
-                description='Lorem Ipsum'
-                textButton='Compra'
-                ></CardBT>
-                <CardBT
-                productImg='../../assets/img/stickerStunning.webp'
-                cardTitle='Pantalon1'
-                price='5000'
-                description='Lorem Ipsum'
-                textButton='Compra'
-                ></CardBT>
-                                <CardBT
-                productImg='../../assets/img/stickerStunning.webp'
-                cardTitle='Pantalon1'
-                price='5000'
-                description='Lorem Ipsum'
-                textButton='Compra'
-                ></CardBT>
-                                <CardBT
-                productImg='../../assets/img/stickerStunning.webp'
-                cardTitle='Pantalon1'
-                price='5000'
-                description='Lorem Ipsum'
-                textButton='Compra'
-                ></CardBT>
+            {products.map((product) => (
+                <Row
+                className="mt-4" 
+                >
+                    <CardBT 
+                    key={product.id}
+                    id={product.id}
+                    productImg={product.productImg}
+                    cardTitle={product.cardTitle}
+                    price={product.price}
+                    description={product.description}
+                    textButton={product.textButton}
+                    ></CardBT>
+                </Row>
+                    
+                ))};
             </Flexwrapper>
-        </div>
     );
 }
