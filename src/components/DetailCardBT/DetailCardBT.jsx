@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import { Container } from 'react-bootstrap';
 
 
-function DetailCardBT({urlImg,titulo,precio,descripcion}) {
+function DetailCardBT({urlImg,titulo,precio,descripcion,onAddToCart}) {
     return (
     <Container>
         <Row>
@@ -33,7 +33,9 @@ function DetailCardBT({urlImg,titulo,precio,descripcion}) {
                             {`${descripcion}`}
                         </Card.Text>
                     </Card.Body>
-                    <ItemCount/>
+                    <ItemCount
+                        onAddToCart={onAddToCart}
+                    />
                 </Card>
             </Col>
         </Row>

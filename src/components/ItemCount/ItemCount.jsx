@@ -6,8 +6,9 @@ import { faPlus,faMinus } from '@fortawesome/free-solid-svg-icons'
 import Stack from 'react-bootstrap/Stack';
 
 
-function ItemCount(props){
-    const {stock=50,initial=1,agregar}=props;
+
+function ItemCount({stock=50,initial=1,onAddToCart}){
+
     // Creamos un estado usando useState donde asigno a count el valor de 1--initial
     const [count,setCount]= useState(initial);
     // funcion de validación para que no supere el stock y agregue item
@@ -35,9 +36,10 @@ function ItemCount(props){
                         <FontAwesomeIcon icon={faPlus} />
                     </Button>
                 </ButtonGroup>
-                <Button variant="outline-dark" 
-                onClick={()=>agregar(count)}
-                disabled={count > stock || count <= 0}>
+                <Button
+                variant='outline-dark'
+                onClick={()=>onAddToCart(count)}
+                >
                     Comprar
                 </Button>
             </Stack>

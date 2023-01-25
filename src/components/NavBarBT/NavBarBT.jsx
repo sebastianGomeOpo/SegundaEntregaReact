@@ -6,9 +6,12 @@ import { CartWidget } from '../CartWidget/CartWidget';
 import NavLink from '../NavLink/NavLink';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
+//import UserMenu from './UserMenu';
+//import Button from 'react-bootstrap/Button';
+
 
 export function NavBarBT({logo}) {
-
+    // let inputUsername =" Christian";
     const [category, setCategory]= useState([]);
     getItems().then((data)=>{
         setCategory(data);
@@ -32,11 +35,14 @@ export function NavBarBT({logo}) {
                         <Nav.Link as={Link} to="">Home</Nav.Link>    
                         {category.map((category) => (
                             <NavLink
+                                key={category.id}
                                 category={category.category}
-                            />
+                                />
                         ))};
                     </Nav>
+                    {/* <Button variant="outline-light" onClick={()=>{alert(`Bienvenido ${inputUsername}!`)}}>Login</Button> */}
                     
+                    {/* <UserMenu/> */}
                 </Container>
                 <CartWidget/>
             </Navbar>

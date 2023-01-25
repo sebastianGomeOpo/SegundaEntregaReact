@@ -59,7 +59,7 @@ export function getItems() {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(databaseItems);
-        }, 1000);
+        }, 1);
     });
 };
 
@@ -71,7 +71,7 @@ export function getSingleItem(itemid) {
         setTimeout(() => {
             if (itemReq!==undefined) {
             resolve(itemReq)};
-        }, 1000);
+        }, 1);
     });
 };
 
@@ -82,7 +82,7 @@ export function getItemsByCategoryid(category) {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(itemCat);
-        }, 1000);
+        }, 1);
     });
 };
 

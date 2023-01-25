@@ -1,14 +1,14 @@
 const categoriesDB = [
     {
-        id: 1,
+        id: 11,
         category:'adultos' 
     },
     { 
-        id: 2,
+        id: 22,
         category:'niños'
     },
     {
-        id: 3,
+        id: 33,
         category: 'bebes'
 },
 ]
