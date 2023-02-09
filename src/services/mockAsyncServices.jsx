@@ -6,7 +6,9 @@ const databaseItems = [
         price:'5000',
         description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         textButton:'Compra',
-        category:'adultos}'
+        category:'adultos}',
+        stock: 5,
+        discount:50,
     },
     {
         id:2,
@@ -15,7 +17,8 @@ const databaseItems = [
         price:'4000',
         description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         textButton:'Compra',
-        category:'adultos}'
+        category:'adultos}',
+        stock: 20
     },
     {
         id:3,
@@ -24,7 +27,9 @@ const databaseItems = [
         price:'3000',
         description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         textButton:'Compra',
-        category:'adultos}'
+        category:'adultos}',
+        stock: 10,
+        discount:40,
     },
     {
         id:4,
@@ -33,7 +38,8 @@ const databaseItems = [
         price:'2000',
         description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         textButton:'Compra',
-        category:'niños}'
+        category:'niños}',
+        stock: 15
     },
     {
         id:5,
@@ -42,7 +48,8 @@ const databaseItems = [
         price:'1000',
         description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         textButton:'Compra',
-        category:'niños}'
+        category:'niños}',
+        stock: 20
     },
     {
         id:6,
@@ -51,7 +58,8 @@ const databaseItems = [
         price:'8000',
         description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
         textButton:'Compra',
-        category:'bebes}'
+        category:'bebes}',
+        stock: 10
     },
 ];
 
@@ -59,7 +67,7 @@ export function getItems() {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(databaseItems);
-        }, 1);
+        }, 2000);
     });
 };
 

@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 export function SendButton(props) {
 
     const handleClick = () => {
-        console.log("...");
+        // console.log("...");
         props.onTouch();
     }
     return (

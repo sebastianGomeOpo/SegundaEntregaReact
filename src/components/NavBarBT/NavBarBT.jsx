@@ -35,7 +35,6 @@ export function NavBarBT({logo}) {
                         <Nav.Link as={Link} to="">Home</Nav.Link>    
                         {category.map((category) => (
                             <NavLink
-                                key={category.id}
                                 category={category.category}
                                 />
                         ))};

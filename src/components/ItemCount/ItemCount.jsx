@@ -4,10 +4,10 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus,faMinus } from '@fortawesome/free-solid-svg-icons'
 import Stack from 'react-bootstrap/Stack';
+import { Link  } from 'react-router-dom';
 
 
-
-function ItemCount({stock=50,initial=1,onAddToCart}){
+function ItemCount({stock,initial=0,onAddToCart,isInCart}){
 
     // Creamos un estado usando useState donde asigno a count el valor de 1--initial
     const [count,setCount]= useState(initial);
@@ -17,6 +17,7 @@ function ItemCount({stock=50,initial=1,onAddToCart}){
     // cuando se quita un elemento debo validar no continuar si tengo 0 elementos
     const quitarItem=()=> count >0 && setCount(count-1);
 
+    // console.log(isInCart)
     return(
         <>
             <Stack gap={2} >
@@ -39,8 +40,12 @@ function ItemCount({stock=50,initial=1,onAddToCart}){
                 <Button
                 variant='outline-dark'
                 onClick={()=>onAddToCart(count)}
+                
                 >
                     Comprar
+                </Button>
+                <Button as={Link} to='/cart' variant='outline-dark' disabled={!isInCart}>
+                    Terminar compra 
                 </Button>
             </Stack>
             

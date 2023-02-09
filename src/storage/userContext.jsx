@@ -9,7 +9,7 @@ export function UserContextProvider(props){
     return(
         // Renderizamos el context.Provider y los chiuldren con props
         <>
-            <userContext.Provider value = {{user:"Tu vieja"}}>
+            <userContext.Provider value = {{user:""}}>
             {/* Los renderizamos los children para que todos los children tengan acceso al value de nuestro proveedor */}
                 {props.children}
             </userContext.Provider>

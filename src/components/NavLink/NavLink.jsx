@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 function NavLink({category}) {
-    const urlDetail=`/category/${category}}`;
+    const urlDetail=`/category/${category}`;
     
     return (
         <Nav.Link as={Link} to={urlDetail}>{category}</Nav.Link>                                        
